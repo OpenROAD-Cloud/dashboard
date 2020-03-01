@@ -11,7 +11,7 @@
             </template>
             <template slot="thead">
               <vs-th>timestamp</vs-th>
-              <vs-th :key="build" v-for="(x, build) in builds">{{builds[build].timestamp}}</vs-th>
+              <vs-th :key="build" v-for="(x, build) in gcdBuilds">{{gcdBuilds[build].timestamp}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -21,8 +21,8 @@
                 </vs-td>
                 <vs-td
                   :key="indextrr"
-                  v-for="(tr, indextrr) in builds"
-                >{{builds[indextrr][data[indextr].name]}}</vs-td>
+                  v-for="(tr, indextrr) in gcdBuilds"
+                >{{gcdBuilds[indextrr][data[indextr].name]}}</vs-td>
               </vs-tr>
             </template>
           </vs-table>
@@ -36,15 +36,14 @@
 </template>
 
 <script>
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+
 export default {
   data: () => ({
     colorx: "dark",
-    builds: [
-      { timestamp: "2020.02.20", commit: "db16fnj", uuid: "1234" },
-      { timestamp: "2020.02.19", commit: "12ng7", uuid: "5678" },
-      { timestamp: "2020.02.18", commit: "lsm7g", uuid: "1234" },
-      { timestamp: "2020.02.17", commit: "amnv7as", uuid: "1234" }
-    ],
+    gcdBuilds: [],
     metrics: [
       { name: "commit" },
       { name: "uuid" },
@@ -52,7 +51,29 @@ export default {
       { name: "yosys_version" },
       { name: "yosys_cell_count" }
     ]
-  })
+  }),
+  created: function() {
+    this.loadMetrics();
+  },
+  methods: {
+    loadMetrics() {
+      var db = firebase.firestore();
+      var gcdMetrics = db.collection("metrics").doc("tsmc65lp-gcd");
+
+      gcdMetrics
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            this.gcdBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+    }
+  }
 };
 </script>
 

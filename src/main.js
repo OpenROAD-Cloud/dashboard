@@ -52,6 +52,9 @@ import { VueHammer } from 'vue2-hammer'
 Vue.use(VueHammer)
 
 
+// Firebase
+import '@/firebase/firebaseConfig'
+
 // PrismJS
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
