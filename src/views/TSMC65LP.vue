@@ -7,7 +7,7 @@
         <div class="con-tab-ejemplo">
           <vs-table search :data="metrics">
             <template slot="header">
-              <h3>GCD</h3>
+              <h3>gcd</h3>
             </template>
             <template slot="thead">
               <vs-th>timestamp</vs-th>
@@ -28,8 +28,181 @@
           </vs-table>
         </div>
       </vs-tab>
+      <vs-tab label="swerv">
+        <div class="con-tab-ejemplo">
+          <div class="con-tab-ejemplo">
+            <vs-table search :data="metrics">
+              <template slot="header">
+                <h3>swerv</h3>
+              </template>
+              <template slot="thead">
+                <vs-th>timestamp</vs-th>
+                <vs-th
+                  :key="build"
+                  v-for="(x, build) in swervBuilds"
+                >{{swervBuilds[build].generate_date}}</vs-th>
+              </template>
+
+              <template slot-scope="{data}">
+                <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                  <vs-td :data="data[indextr].name">
+                    <b>{{data[indextr].name}}</b>
+                  </vs-td>
+                  <vs-td
+                    :key="indextrr"
+                    v-for="(tr, indextrr) in swervBuilds"
+                  >{{swervBuilds[indextrr][data[indextr].name]}}</vs-td>
+                </vs-tr>
+              </template>
+            </vs-table>
+          </div>
+        </div>
+      </vs-tab>
+      <vs-tab label="tinyRocket">
+        <div class="con-tab-ejemplo">
+          <div class="con-tab-ejemplo">
+            <vs-table search :data="metrics">
+              <template slot="header">
+                <h3>tinyRocket</h3>
+              </template>
+              <template slot="thead">
+                <vs-th>timestamp</vs-th>
+                <vs-th
+                  :key="build"
+                  v-for="(x, build) in tinyRocketBuilds"
+                >{{tinyRocketBuilds[build].generate_date}}</vs-th>
+              </template>
+
+              <template slot-scope="{data}">
+                <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                  <vs-td :data="data[indextr].name">
+                    <b>{{data[indextr].name}}</b>
+                  </vs-td>
+                  <vs-td
+                    :key="indextrr"
+                    v-for="(tr, indextrr) in tinyRocketBuilds"
+                  >{{tinyRocketBuilds[indextrr][data[indextr].name]}}</vs-td>
+                </vs-tr>
+              </template>
+            </vs-table>
+          </div>
+        </div>
+      </vs-tab>
       <vs-tab label="aes">
-        <div class="con-tab-ejemplo">AES</div>
+        <div class="con-tab-ejemplo">
+          <div class="con-tab-ejemplo">
+            <vs-table search :data="metrics">
+              <template slot="header">
+                <h3>aes</h3>
+              </template>
+              <template slot="thead">
+                <vs-th>timestamp</vs-th>
+                <vs-th
+                  :key="build"
+                  v-for="(x, build) in aesBuilds"
+                >{{aesBuilds[build].generate_date}}</vs-th>
+              </template>
+
+              <template slot-scope="{data}">
+                <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                  <vs-td :data="data[indextr].name">
+                    <b>{{data[indextr].name}}</b>
+                  </vs-td>
+                  <vs-td
+                    :key="indextrr"
+                    v-for="(tr, indextrr) in aesBuilds"
+                  >{{aesBuilds[indextrr][data[indextr].name]}}</vs-td>
+                </vs-tr>
+              </template>
+            </vs-table>
+          </div>
+        </div>
+      </vs-tab>
+      <vs-tab label="bp_fe_top">
+        <div class="con-tab-ejemplo">
+          <div class="con-tab-ejemplo">
+            <vs-table search :data="metrics">
+              <template slot="header">
+                <h3>bp_fe_top</h3>
+              </template>
+              <template slot="thead">
+                <vs-th>timestamp</vs-th>
+                <vs-th
+                  :key="build"
+                  v-for="(x, build) in bp_fe_topBuilds"
+                >{{bp_fe_topBuilds[build].generate_date}}</vs-th>
+              </template>
+
+              <template slot-scope="{data}">
+                <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                  <vs-td :data="data[indextr].name">
+                    <b>{{data[indextr].name}}</b>
+                  </vs-td>
+                  <vs-td
+                    :key="indextrr"
+                    v-for="(tr, indextrr) in bp_fe_topBuilds"
+                  >{{bp_fe_topBuilds[indextrr][data[indextr].name]}}</vs-td>
+                </vs-tr>
+              </template>
+            </vs-table>
+          </div>
+        </div>
+      </vs-tab>
+      <vs-tab label="dnode">
+        <div class="con-tab-ejemplo">
+          <vs-table search :data="metrics">
+            <template slot="header">
+              <h3>dnode</h3>
+            </template>
+            <template slot="thead">
+              <vs-th>timestamp</vs-th>
+              <vs-th
+                :key="build"
+                v-for="(x, build) in dnodeBuilds"
+              >{{dnodeBuilds[build].generate_date}}</vs-th>
+            </template>
+
+            <template slot-scope="{data}">
+              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                <vs-td :data="data[indextr].name">
+                  <b>{{data[indextr].name}}</b>
+                </vs-td>
+                <vs-td
+                  :key="indextrr"
+                  v-for="(tr, indextrr) in dnodeBuilds"
+                >{{dnodeBuilds[indextrr][data[indextr].name]}}</vs-td>
+              </vs-tr>
+            </template>
+          </vs-table>
+        </div>
+      </vs-tab>
+      <vs-tab label="ibex">
+        <div class="con-tab-ejemplo">
+          <vs-table search :data="metrics">
+            <template slot="header">
+              <h3>ibex</h3>
+            </template>
+            <template slot="thead">
+              <vs-th>timestamp</vs-th>
+              <vs-th
+                :key="build"
+                v-for="(x, build) in ibexBuilds"
+              >{{ibexBuilds[build].generate_date}}</vs-th>
+            </template>
+
+            <template slot-scope="{data}">
+              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                <vs-td :data="data[indextr].name">
+                  <b>{{data[indextr].name}}</b>
+                </vs-td>
+                <vs-td
+                  :key="indextrr"
+                  v-for="(tr, indextrr) in ibexBuilds"
+                >{{ibexBuilds[indextrr][data[indextr].name]}}</vs-td>
+              </vs-tr>
+            </template>
+          </vs-table>
+        </div>
       </vs-tab>
     </vs-tabs>
   </div>
@@ -61,11 +234,109 @@ export default {
         .catch(function(error) {
           console.log("Error getting metrics:", error);
         });
+
+      var swervMetrics = db.collection("metrics").doc("tsmc65lp-swerv");
+
+      swervMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.swervBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+
+      var tinyRocketMetrics = db
+        .collection("metrics")
+        .doc("tsmc65lp-tinyrocket");
+
+      tinyRocketMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.tinyRocketBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+
+      var aesMetrics = db.collection("metrics").doc("tsmc65lp-aes");
+
+      aesMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.aesBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+
+      var bpfetopMetrics = db.collection("metrics").doc("tsmc65lp-bpfetop");
+
+      bpfetopMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.be_fe_topBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+      
+      var dnodeMetrics = db.collection("metrics").doc("tsmc65lp-dnode");
+
+      dnodeMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.dnodeBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+      
+      var ibexMetrics = db.collection("metrics").doc("tsmc65lp-ibex");
+
+      ibexMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.ibexBuilds = doc.data().builds;
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
     }
   },
   data: () => ({
     colorx: "dark",
     gcdBuilds: [],
+    swervBuilds: [],
+    tinyRocketBuilds: [],
+    aesBuilds: [],
+    bp_fe_topBuilds: [],
+    dnodeBuilds: [],
+    ibexBuilds: [],
     metrics: [
       { name: "comment" },
       { name: "cts_cpu" },
