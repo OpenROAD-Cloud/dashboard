@@ -16,15 +16,42 @@ export default [
     icon: "MonitorIcon",
   },
   {
-    url: "/tsmc65lp",
-    name: "TSMC65LP",
-    slug: "tsmc65lp",
-    icon: "ServerIcon",
+    header: 'OpenROAD',
+    icon: 'PackageIcon',
+    i18n: 'Apps',
+    items: [
+      {
+        url: "/tsmc65lp-openroad",
+        name: "TSMC65LP",
+        slug: "tsmc65lp",
+        icon: "ServerIcon",
+      },
+      {
+        url: "/gf14-openroad",
+        name: "GF14",
+        slug: "gf14",
+        icon: "ServerIcon",
+      }
+    ]
   },
   {
-    url: "/gf14",
-    name: "GF14",
-    slug: "gf14",
-    icon: "ServerIcon",
+    header: 'OpenROAD-Flow',
+    icon: 'PackageIcon',
+    i18n: 'Apps',
+    items: [
+      {
+        url: "/tsmc65lp-openroad-flow",
+        name: "TSMC65LP",
+        slug: "tsmc65lp",
+        icon: "ServerIcon",
+      },
+      {
+        url: "/gf14-openroad-flow",
+        name: "GF14",
+        slug: "gf14",
+        icon: "ServerIcon",
+      }
+    ]
   },
+  
 ]
