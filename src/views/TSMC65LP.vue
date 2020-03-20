@@ -374,6 +374,19 @@ export default {
           var metric = {};
 
           var build_value = builds[i][key];
+
+          if (
+            build_value.toString().includes("ERR") ||
+            build_value.toString().includes("N/A")
+          ) {
+            metric = {
+              value: build_value,
+              color: "metricUnimproved"
+            };
+            build[key] = metric;
+            continue;
+          }
+
           try {
             var previous_build_value =
               builds[Math.min(i + 1, builds.length - 1)][key];
