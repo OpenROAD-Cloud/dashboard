@@ -214,6 +214,93 @@
           </vs-table>
         </div>
       </vs-tab>
+      <vs-tab label="bsg_loopback">
+        <div class="con-tab-ejemplo">
+          <vs-table search :data="metrics">
+            <template slot="header">
+              <h3>bsg_loopback</h3>
+            </template>
+            <template slot="thead">
+              <vs-th>timestamp</vs-th>
+              <vs-th
+                :key="build"
+                v-for="(x, build) in bsg_loopbackBuilds"
+              >{{bsg_loopbackBuilds[build].generate_date.value}}</vs-th>
+            </template>
+
+            <template slot-scope="{data}">
+              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                <vs-td :data="data[indextr].name">
+                  <b>{{data[indextr].name}}</b>
+                </vs-td>
+                <vs-td
+                  :class="(bsg_loopbackBuilds[indextrr][data[indextr].name]  != undefined) ? bsg_loopbackBuilds[indextrr][data[indextr].name].color: ''"
+                  :key="indextrr"
+                  v-for="(tr, indextrr) in bsg_loopbackBuilds"
+                >{{(bsg_loopbackBuilds[indextrr][data[indextr].name] != undefined) ? bsg_loopbackBuilds[indextrr][data[indextr].name].value:''}}</vs-td>
+              </vs-tr>
+            </template>
+          </vs-table>
+        </div>
+      </vs-tab>
+      <vs-tab label="bp_fe">
+        <div class="con-tab-ejemplo">
+          <vs-table search :data="metrics">
+            <template slot="header">
+              <h3>bp_fe</h3>
+            </template>
+            <template slot="thead">
+              <vs-th>timestamp</vs-th>
+              <vs-th
+                :key="build"
+                v-for="(x, build) in bp_feBuilds"
+              >{{bp_feBuilds[build].generate_date.value}}</vs-th>
+            </template>
+
+            <template slot-scope="{data}">
+              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                <vs-td :data="data[indextr].name">
+                  <b>{{data[indextr].name}}</b>
+                </vs-td>
+                <vs-td
+                  :class="(bp_feBuilds[indextrr][data[indextr].name]  != undefined) ? bp_feBuilds[indextrr][data[indextr].name].color: ''"
+                  :key="indextrr"
+                  v-for="(tr, indextrr) in bp_feBuilds"
+                >{{(bp_feBuilds[indextrr][data[indextr].name] != undefined) ? bp_feBuilds[indextrr][data[indextr].name].value:''}}</vs-td>
+              </vs-tr>
+            </template>
+          </vs-table>
+        </div>
+      </vs-tab>
+      <vs-tab label="bp_single">
+        <div class="con-tab-ejemplo">
+          <vs-table search :data="metrics">
+            <template slot="header">
+              <h3>bp_single</h3>
+            </template>
+            <template slot="thead">
+              <vs-th>timestamp</vs-th>
+              <vs-th
+                :key="build"
+                v-for="(x, build) in bp_singleBuilds"
+              >{{bp_singleBuilds[build].generate_date.value}}</vs-th>
+            </template>
+
+            <template slot-scope="{data}">
+              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                <vs-td :data="data[indextr].name">
+                  <b>{{data[indextr].name}}</b>
+                </vs-td>
+                <vs-td
+                  :class="(bp_singleBuilds[indextrr][data[indextr].name]  != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].color: ''"
+                  :key="indextrr"
+                  v-for="(tr, indextrr) in bp_singleBuilds"
+                >{{(bp_singleBuilds[indextrr][data[indextr].name] != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].value:''}}</vs-td>
+              </vs-tr>
+            </template>
+          </vs-table>
+        </div>
+      </vs-tab>
     </vs-tabs>
   </div>
 </template>
@@ -358,6 +445,53 @@ export default {
         .catch(function(error) {
           console.log("Error getting metrics:", error);
         });
+
+      var bsg_loopbackMetrics = db
+        .collection("metrics2")
+        .doc("gf14-bsgloopback");
+
+      bsg_loopbackMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.bsg_loopbackBuilds = this.colorTableCells(doc.data().builds);
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+
+      var bp_feMetrics = db.collection("metrics2").doc("gf14-bpfe");
+
+      bp_feMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.bp_feBuilds = this.colorTableCells(doc.data().builds);
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
+
+      var bp_singleMetrics = db.collection("metrics2").doc("gf14-bpsingle");
+
+      bp_singleMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.bp_singleBuilds = this.colorTableCells(doc.data().builds);
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
     },
     colorTableCells(builds) {
       var coloredBuilds = [];
@@ -474,6 +608,9 @@ export default {
     bp_fe_topBuilds: [],
     dnodeBuilds: [],
     ibexBuilds: [],
+    bsg_loopbackBuilds: [],
+    bp_feBuilds: [],
+    bp_singleBuilds: [],
     metrics: []
   })
 };
