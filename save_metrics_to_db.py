@@ -54,6 +54,6 @@ if __name__ == "__main__":
 
     metrics = json.load(args.metrics)
     if args.db == 'db1':
-        save_to_firebase('metrics', metrics, args.design.lower(), args.tech.lower().replace('_', ''))
+        save_to_firebase('metrics', metrics, args.design.lower().replace('_', ''), args.tech.lower().replace('_', ''))
     else:
-        save_to_firebase('metrics2', metrics, args.design.lower(), args.tech.lower().replace('_', ''))
+        save_to_firebase('metrics2', metrics, args.design.lower().replace('_', ''), args.tech.lower().replace('_', ''))
