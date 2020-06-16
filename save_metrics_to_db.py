@@ -33,7 +33,8 @@ def save_to_firebase(collection, metrics, design, tech):
     builds.insert(0, metrics)
 
     doc_ref.set({
-        u'builds': builds[:30]
+        u'builds': builds[:30],
+        u'all_history': builds
     })
 
 
