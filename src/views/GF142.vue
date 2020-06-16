@@ -20,7 +20,7 @@
             <template slot-scope="{data}">
               <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                 <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name}}</b>
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                 </vs-td>
                 <vs-td
                   :class="(gcdBuilds[indextrr][data[indextr].name]  != undefined) ? gcdBuilds[indextrr][data[indextr].name].color: ''"
@@ -50,7 +50,7 @@
               <template slot-scope="{data}">
                 <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                   <vs-td :data="data[indextr].name">
-                    <b>{{data[indextr].name}}</b>
+                    <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                   </vs-td>
                   <vs-td
                     :class="(swervBuilds[indextrr][data[indextr].name]  != undefined) ? swervBuilds[indextrr][data[indextr].name].color: ''"
@@ -81,7 +81,7 @@
               <template slot-scope="{data}">
                 <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                   <vs-td :data="data[indextr].name">
-                    <b>{{data[indextr].name}}</b>
+                    <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                   </vs-td>
                   <vs-td
                     :class="(tinyRocketBuilds[indextrr][data[indextr].name]  != undefined) ? tinyRocketBuilds[indextrr][data[indextr].name].color: ''"
@@ -112,7 +112,7 @@
               <template slot-scope="{data}">
                 <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                   <vs-td :data="data[indextr].name">
-                    <b>{{data[indextr].name}}</b>
+                    <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                   </vs-td>
                   <vs-td
                     :class="(aesBuilds[indextrr][data[indextr].name]  != undefined) ? aesBuilds[indextrr][data[indextr].name].color: ''"
@@ -143,7 +143,7 @@
               <template slot-scope="{data}">
                 <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                   <vs-td :data="data[indextr].name">
-                    <b>{{data[indextr].name}}</b>
+                    <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                   </vs-td>
                   <vs-td
                     :class="(bp_fe_topBuilds[indextrr][data[indextr].name]  != undefined) ? bp_fe_topBuilds[indextrr][data[indextr].name].color: ''"
@@ -173,7 +173,7 @@
             <template slot-scope="{data}">
               <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                 <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name}}</b>
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                 </vs-td>
                 <vs-td
                   :class="(dnodeBuilds[indextrr][data[indextr].name]  != undefined) ? dnodeBuilds[indextrr][data[indextr].name].color: ''"
@@ -202,7 +202,7 @@
             <template slot-scope="{data}">
               <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                 <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name}}</b>
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                 </vs-td>
                 <vs-td
                   :class="(ibexBuilds[indextrr][data[indextr].name]  != undefined) ? ibexBuilds[indextrr][data[indextr].name].color: ''"
@@ -231,7 +231,7 @@
             <template slot-scope="{data}">
               <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                 <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name}}</b>
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                 </vs-td>
                 <vs-td
                   :class="(bsg_loopbackBuilds[indextrr][data[indextr].name]  != undefined) ? bsg_loopbackBuilds[indextrr][data[indextr].name].color: ''"
@@ -260,7 +260,7 @@
             <template slot-scope="{data}">
               <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                 <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name}}</b>
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                 </vs-td>
                 <vs-td
                   :class="(bp_feBuilds[indextrr][data[indextr].name]  != undefined) ? bp_feBuilds[indextrr][data[indextr].name].color: ''"
@@ -289,7 +289,7 @@
             <template slot-scope="{data}">
               <vs-tr :key="indextr" v-for="(tr, indextr) in data">
                 <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name}}</b>
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
                 </vs-td>
                 <vs-td
                   :class="(bp_singleBuilds[indextrr][data[indextr].name]  != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].color: ''"
@@ -320,7 +320,7 @@ export default {
     loadSchema() {
       axios
         .get(
-          "https://raw.githubusercontent.com/The-OpenROAD-Project/OpenROAD-flow/openroad/flow/util/metadata.schema.json"
+          "https://raw.githubusercontent.com/abdelrahman/OpenROAD-flow/openroad/flow/util/metadata.schema.json"
         )
         .then(response => {
           // handle success
