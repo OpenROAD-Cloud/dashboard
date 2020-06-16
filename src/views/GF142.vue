@@ -3,6 +3,35 @@
     <h1>GF14</h1>
     <br />
     <vs-tabs :color="colorx">
+      <vs-tab label="bp_single">
+        <div class="con-tab-ejemplo">
+          <vs-table search :data="metrics">
+            <template slot="header">
+              <h3>bp_single</h3>
+            </template>
+            <template slot="thead">
+              <vs-th>timestamp</vs-th>
+              <vs-th
+                :key="build"
+                v-for="(x, build) in bp_singleBuilds"
+              >{{bp_singleBuilds[build].run__flow__generate_date.value}}</vs-th>
+            </template>
+
+            <template slot-scope="{data}">
+              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                <vs-td :data="data[indextr].name">
+                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
+                </vs-td>
+                <vs-td
+                  :class="(bp_singleBuilds[indextrr][data[indextr].name]  != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].color: ''"
+                  :key="indextrr"
+                  v-for="(tr, indextrr) in bp_singleBuilds"
+                >{{(bp_singleBuilds[indextrr][data[indextr].name] != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].value:''}}</vs-td>
+              </vs-tr>
+            </template>
+          </vs-table>
+        </div>
+      </vs-tab>
       <vs-tab label="gcd">
         <div class="con-tab-ejemplo">
           <vs-table search :data="metrics">
@@ -14,7 +43,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in gcdBuilds"
-              >{{gcdBuilds[build].generate_date.value}}</vs-th>
+              >{{gcdBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -44,7 +73,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in swervBuilds"
-                >{{swervBuilds[build].generate_date.value}}</vs-th>
+                >{{swervBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -75,7 +104,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in tinyRocketBuilds"
-                >{{tinyRocketBuilds[build].generate_date.value}}</vs-th>
+                >{{tinyRocketBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -106,7 +135,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in aesBuilds"
-                >{{aesBuilds[build].generate_date.value}}</vs-th>
+                >{{aesBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -137,7 +166,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in bp_fe_topBuilds"
-                >{{bp_fe_topBuilds[build].generate_date.value}}</vs-th>
+                >{{bp_fe_topBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -167,7 +196,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in dnodeBuilds"
-              >{{dnodeBuilds[build].generate_date.value}}</vs-th>
+              >{{dnodeBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -196,7 +225,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in ibexBuilds"
-              >{{ibexBuilds[build].generate_date.value}}</vs-th>
+              >{{ibexBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -225,7 +254,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in bsg_loopbackBuilds"
-              >{{bsg_loopbackBuilds[build].generate_date.value}}</vs-th>
+              >{{bsg_loopbackBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -254,7 +283,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in bp_feBuilds"
-              >{{bp_feBuilds[build].generate_date.value}}</vs-th>
+              >{{bp_feBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -272,35 +301,6 @@
           </vs-table>
         </div>
       </vs-tab>
-      <vs-tab label="bp_single">
-        <div class="con-tab-ejemplo">
-          <vs-table search :data="metrics">
-            <template slot="header">
-              <h3>bp_single</h3>
-            </template>
-            <template slot="thead">
-              <vs-th>timestamp</vs-th>
-              <vs-th
-                :key="build"
-                v-for="(x, build) in bp_singleBuilds"
-              >{{bp_singleBuilds[build].generate_date.value}}</vs-th>
-            </template>
-
-            <template slot-scope="{data}">
-              <vs-tr :key="indextr" v-for="(tr, indextr) in data">
-                <vs-td :data="data[indextr].name">
-                  <b>{{data[indextr].name.replace(/__/g, "::")}}</b>
-                </vs-td>
-                <vs-td
-                  :class="(bp_singleBuilds[indextrr][data[indextr].name]  != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].color: ''"
-                  :key="indextrr"
-                  v-for="(tr, indextrr) in bp_singleBuilds"
-                >{{(bp_singleBuilds[indextrr][data[indextr].name] != undefined) ? bp_singleBuilds[indextrr][data[indextr].name].value:''}}</vs-td>
-              </vs-tr>
-            </template>
-          </vs-table>
-        </div>
-      </vs-tab>
     </vs-tabs>
   </div>
 </template>
@@ -312,7 +312,7 @@ const firebase = require("firebase");
 require("firebase/firestore");
 
 export default {
-  created: function() {
+  beforeMount: function() {
     this.loadSchema();
     this.loadMetrics();
   },
@@ -320,7 +320,7 @@ export default {
     loadSchema() {
       axios
         .get(
-          "https://raw.githubusercontent.com/abdelrahman/OpenROAD-flow/openroad/flow/util/metadata.schema.json"
+          "https://raw.githubusercontent.com/abdelrahmanhosny/OpenROAD-flow/openroad/flow/util/metadata.schema.json"
         )
         .then(response => {
           // handle success
@@ -342,6 +342,21 @@ export default {
     loadMetrics() {
       var db = firebase.firestore();
       var gcdMetrics = db.collection("metrics2").doc("gf14-gcd");
+
+      var bp_singleMetrics = db.collection("metrics2").doc("gf14-bpsingle");
+
+      bp_singleMetrics
+        .get()
+        .then(doc => {
+          if (doc.exists) {
+            this.bp_singleBuilds = this.colorTableCells(doc.data().builds);
+          } else {
+            console.log("No such document!");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error getting metrics:", error);
+        });
 
       gcdMetrics
         .get()
@@ -478,20 +493,6 @@ export default {
           console.log("Error getting metrics:", error);
         });
 
-      var bp_singleMetrics = db.collection("metrics2").doc("gf14-bpsingle");
-
-      bp_singleMetrics
-        .get()
-        .then(doc => {
-          if (doc.exists) {
-            this.bp_singleBuilds = this.colorTableCells(doc.data().builds);
-          } else {
-            console.log("No such document!");
-          }
-        })
-        .catch(function(error) {
-          console.log("Error getting metrics:", error);
-        });
     },
     colorTableCells(builds) {
       var coloredBuilds = [];

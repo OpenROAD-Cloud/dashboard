@@ -14,7 +14,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in gcdBuilds"
-              >{{gcdBuilds[build].generate_date.value}}</vs-th>
+              >{{gcdBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -44,7 +44,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in swervBuilds"
-                >{{swervBuilds[build].generate_date.value}}</vs-th>
+                >{{swervBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -75,7 +75,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in tinyRocketBuilds"
-                >{{tinyRocketBuilds[build].generate_date.value}}</vs-th>
+                >{{tinyRocketBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -106,7 +106,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in aesBuilds"
-                >{{aesBuilds[build].generate_date.value}}</vs-th>
+                >{{aesBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -137,7 +137,7 @@
                 <vs-th
                   :key="build"
                   v-for="(x, build) in bp_fe_topBuilds"
-                >{{bp_fe_topBuilds[build].generate_date.value}}</vs-th>
+                >{{bp_fe_topBuilds[build].run__flow__generate_date.value}}</vs-th>
               </template>
 
               <template slot-scope="{data}">
@@ -167,7 +167,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in dnodeBuilds"
-              >{{dnodeBuilds[build].generate_date.value}}</vs-th>
+              >{{dnodeBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -196,7 +196,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in ibexBuilds"
-              >{{ibexBuilds[build].generate_date.value}}</vs-th>
+              >{{ibexBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -225,7 +225,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in bsg_loopbackBuilds"
-              >{{bsg_loopbackBuilds[build].generate_date.value}}</vs-th>
+              >{{bsg_loopbackBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -254,7 +254,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in bp_feBuilds"
-              >{{bp_feBuilds[build].generate_date.value}}</vs-th>
+              >{{bp_feBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
@@ -283,7 +283,7 @@
               <vs-th
                 :key="build"
                 v-for="(x, build) in bp_singleBuilds"
-              >{{bp_singleBuilds[build].generate_date.value}}</vs-th>
+              >{{bp_singleBuilds[build].run__flow__generate_date.value}}</vs-th>
             </template>
 
             <template slot-scope="{data}">
