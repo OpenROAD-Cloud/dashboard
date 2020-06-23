@@ -16,3 +16,4 @@ yarn-error.log
 vuexy-shell-scripts
 .DS_Store
 .venv
+.*

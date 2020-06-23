@@ -6,9 +6,9 @@
   position: absolute;
 }
 .loading-logo{
-  position: absolute;
-  left: calc(50% - 45px);
-  top: 40%;
+  position: relative;
+  left: 35%;
+  top: 20%;
 }
 .loading {
   position: absolute;
