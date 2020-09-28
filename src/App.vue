@@ -1,17 +1,17 @@
 <!-- =========================================================================================
-	File Name: App.vue
-	Description: Main vue file - APP
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
+File Name: App.vue
+Description: Main vue file - APP
+----------------------------------------------------------------------------------------
+Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+Author: Pixinvent
+Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 
 <template>
-	<div id="app" :class="vueAppClasses">
-		<router-view @setAppClasses="setAppClasses" />
-	</div>
+        <div id="app" :class="vueAppClasses">
+                <router-view @setAppClasses="setAppClasses" />
+        </div>
 </template>
 
 <script>
