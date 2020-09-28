@@ -19,37 +19,11 @@ export default [{
     icon: 'PackageIcon',
     i18n: 'Apps',
     items: [{
-        url: "/gf14-openroad",
-        name: "GF14",
-        slug: "gf14",
+        url: "/nangate45-openroad",
+        name: "Nangate45",
+        slug: "nangate45",
         icon: "ServerIcon",
       },
-      {
-        url: "/tsmc65lp-openroad",
-        name: "TSMC65LP",
-        slug: "tsmc65lp",
-        icon: "ServerIcon",
-      }
     ]
   },
-  // {
-  //   header: 'OpenROAD-Flow',
-  //   icon: 'PackageIcon',
-  //   i18n: 'Apps',
-  //   items: [
-  //     {
-  //       url: "/tsmc65lp-openroad-flow",
-  //       name: "TSMC65LP",
-  //       slug: "tsmc65lp",
-  //       icon: "ServerIcon",
-  //     },
-  //     {
-  //       url: "/gf14-openroad-flow",
-  //       name: "GF14",
-  //       slug: "gf14",
-  //       icon: "ServerIcon",
-  //     }
-  //   ]
-  // },
-
 ]
