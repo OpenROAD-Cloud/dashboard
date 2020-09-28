@@ -29,7 +29,13 @@ def save_to_firebase(collection, metrics, design, tech):
     doc = tech + '-' + design
     doc_ref = db.collection(collection).document(doc)
 
-    builds = doc_ref.get().to_dict()['builds']
+    builds = doc_ref.get().to_dict()
+
+    if builds:
+        builds = builds['builds']
+    else:
+        builds = []
+
     builds.insert(0, metrics)
 
     doc_ref.set({
@@ -43,18 +49,16 @@ if __name__ == "__main__":
                                      description='Save metadata.json file to Firebase database')
     parser._positionals.title = 'Positional arguments'
     parser._optionals.title = 'Optional arguments'
-    parser.add_argument("db", type=str, choices=['db1', 'db2'],
-                        help="Database to save to")
-    parser.add_argument("tech", type=str,
-                        help="Technology node name")
-    parser.add_argument("design", type=str,
-                        help="Design name")
-    parser.add_argument("metrics", type=open, nargs='?', default='metadata.json',
-                        help="Path to the metadata.json file")
+    parser.add_argument("db"      , type=str  , help="Database to save to")
+    parser.add_argument("tech"    , type=str  , help="Technology node name")
+    parser.add_argument("design"  , type=str  , help="Design name")
+    parser.add_argument("metrics" , type=open , nargs='?' , default='metadata.json' , help="Path to the metadata.json file")
     args = parser.parse_args()
 
     metrics = json.load(args.metrics)
     if args.db == 'db1':
         save_to_firebase('metrics', metrics, args.design.lower().replace('_', ''), args.tech.lower().replace('_', ''))
-    else:
+    elif args.db == 'db1':
         save_to_firebase('metrics2', metrics, args.design.lower().replace('_', ''), args.tech.lower().replace('_', ''))
+    else:
+        save_to_firebase('public-metrics', metrics, args.design.lower().replace('_', ''), args.tech.lower().replace('_', ''))
