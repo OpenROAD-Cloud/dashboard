@@ -37,24 +37,14 @@ const router = new Router({
                 component: () => import('./views/Home.vue')
               },
               {
-                path: '/tsmc65lp-openroad-flow',
-                name: 'tsmc65lp-openroad-flow',
-                component: () => import('./views/TSMC65LP.vue')
-              },
-              {
-                path: '/gf14-openroad-flow',
-                name: 'gf14-openroad-flow',
-                component: () => import('./views/GF14.vue')
-              },
-              {
                 path: '/tsmc65lp-openroad',
                 name: 'tsmc65lp-openroad',
-                component: () => import('./views/TSMC65LP2.vue')
+                component: () => import('./views/TSMC65LP.vue')
               },
               {
                 path: '/gf14-openroad',
                 name: 'gf14-openroad',
-                component: () => import('./views/GF142.vue')
+                component: () => import('./views/GF14.vue')
               }
             ],
         },
