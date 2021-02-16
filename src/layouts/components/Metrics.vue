@@ -56,7 +56,7 @@ export default {
       var db = firebase.firestore();
       var doc = this.libraryName + "-" + this.designName;
 
-      var designMetrics = db.collection("metrics2").doc(doc);
+      var designMetrics = db.collection("public-metrics").doc(doc);
 
       designMetrics
         .get()

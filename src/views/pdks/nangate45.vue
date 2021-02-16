@@ -31,9 +31,7 @@ export default {
   methods: {
     loadSchema() {
       axios
-        .get(
-          "https://raw.githubusercontent.com/abdelrahmanhosny/OpenROAD-flow/openroad/flow/util/metadata.schema.json"
-        )
+        .get("https://raw.githubusercontent.com/abdelrahmanhosny/OpenROAD-flow/openroad/flow/util/metadata.schema.json")
         .then(response => {
           // handle success
           let metrics = [];
