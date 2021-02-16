@@ -40,7 +40,17 @@ const router = new Router({
           path: '/nangate45-openroad',
           name: 'nangate45-openroad',
           component: () => import('./views/pdks/nangate45.vue')
-        }
+        },
+        {
+          path: '/sky130hd-openroad',
+          name: 'sky130hd-openroad',
+          component: () => import('./views/pdks/sky130hd.vue')
+        },
+        {
+          path: '/sky130hs-openroad',
+          name: 'sky130hs-openroad',
+          component: () => import('./views/pdks/sky130hs.vue')
+        },
       ],
     },
     // =============================================================================

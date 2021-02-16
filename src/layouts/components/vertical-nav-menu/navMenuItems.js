@@ -18,10 +18,23 @@ export default [{
     header: 'OpenROAD',
     icon: 'PackageIcon',
     i18n: 'Apps',
-    items: [{
+    items: [
+      {
         url: "/nangate45-openroad",
         name: "Nangate45",
         slug: "nangate45",
+        icon: "ServerIcon",
+      },
+      {
+        url: "/sky130hd-openroad",
+        name: "SkyWater130 hd",
+        slug: "sky130hd",
+        icon: "ServerIcon",
+      },
+      {
+        url: "/sky130hs-openroad",
+        name: "SkyWater130 hs",
+        slug: "sky130hs",
         icon: "ServerIcon",
       },
     ]
