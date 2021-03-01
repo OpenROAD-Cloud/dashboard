@@ -3,13 +3,13 @@
     <h1>Nangate45 (Archive)</h1>
     <br />
     <vs-tabs :color="colorx">
-      <vs-tab label="aes">          <Metrics designName="aes"         libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="dynamicnode">  <Metrics designName="dynamicnode" libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="gcd">          <Metrics designName="gcd"         libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="ibex">         <Metrics designName="ibex"        libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="jpeg">         <Metrics designName="jpeg"        libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="swerv">        <Metrics designName="swerv"       libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="tinyRocket">   <Metrics designName="tinyrocket"  libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="aes">          <Metrics designName="aes"         libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="dynamicnode">  <Metrics designName="dynamicnode" libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="gcd">          <Metrics designName="gcd"         libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="ibex">         <Metrics designName="ibex"        libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="jpeg">         <Metrics designName="jpeg"        libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="swerv">        <Metrics designName="swerv"       libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="tinyRocket">   <Metrics designName="tinyrocket"  libraryName="nangate45" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
     </vs-tabs>
   </div>
 </template>

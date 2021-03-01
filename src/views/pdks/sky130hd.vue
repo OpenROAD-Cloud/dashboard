@@ -3,10 +3,10 @@
     <h1>Sky130hd (Archive)</h1>
     <br />
     <vs-tabs :color="colorx">
-      <vs-tab label="aes">          <Metrics designName="aes"         libraryName="sky130hd" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="gcd">          <Metrics designName="gcd"         libraryName="sky130hd" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="ibex">         <Metrics designName="ibex"        libraryName="sky130hd" :metrics=metrics></Metrics> </vs-tab>
-      <vs-tab label="jpeg">         <Metrics designName="jpeg"        libraryName="sky130hd" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="aes">          <Metrics designName="aes"         libraryName="sky130hd" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="gcd">          <Metrics designName="gcd"         libraryName="sky130hd" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="ibex">         <Metrics designName="ibex"        libraryName="sky130hd" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
+      <vs-tab label="jpeg">         <Metrics designName="jpeg"        libraryName="sky130hd" firebaseDB="public-metrics" :metrics=metrics></Metrics> </vs-tab>
     </vs-tabs>
   </div>
 </template>

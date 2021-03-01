@@ -46,6 +46,10 @@ export default {
     metrics: {
       type: Array,
       required: true
+    },
+    firebaseDB: {
+      type: String,
+      required: true
     }
   },
   created: function() {
@@ -56,7 +60,7 @@ export default {
       var db = firebase.firestore();
       var doc = this.libraryName + "-" + this.designName;
 
-      var designMetrics = db.collection("public-metrics").doc(doc);
+      var designMetrics = db.collection(this.firebaseDB).doc(doc);
 
       designMetrics
         .get()
