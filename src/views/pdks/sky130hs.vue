@@ -12,9 +12,9 @@
 </template>
 
 <script>
-const axios = require("axios");
 
 import Metrics from '../../layouts/components/Metrics'
+import metadataSchema from "../schemas/metadata.schema-v1.json";
 
 export default {
   created: function() {
@@ -25,24 +25,14 @@ export default {
   },
   methods: {
     loadSchema() {
-      axios
-        .get("https://raw.githubusercontent.com/abdelrahmanhosny/OpenROAD-flow/openroad/flow/util/metadata.schema.json")
-        .then(response => {
-          // handle success
-          let metrics = [];
-          for (var p in response.data.properties) {
-            metrics.push({
-              name: p,
-              trend: response.data.properties[p]["improvement"]
-            });
-          }
-          this.metrics = metrics;
-        })
-        .catch(function(error) {
-          // handle error
-          alert("Looks like the JSON schema changed on GitHub!");
-          console.log(error);
+      let metrics = [];
+      for (var p in metadataSchema.properties) {
+        metrics.push({
+          name: p,
+          trend: metadataSchema.properties[p]["improvement"]
         });
+      }
+      this.metrics = metrics;
     }
   },
   data: () => ({
