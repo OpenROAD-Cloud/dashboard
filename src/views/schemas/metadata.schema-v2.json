@@ -1,0 +1,1348 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://theopenroadproject.org/schemas/metadata.schema.json",
+    "type": "object",
+    "title": "OpenROAD metadata schema",
+    "description": "This schema defines the required formatting and validation for metrics tracking.",
+    "required": [
+        "run__flow__generate_date",
+        "run__flow__openroad_version",
+        "run__flow__openroad_commit",
+        "run__flow__uuid",
+        "run__flow__design",
+        "run__flow__platform",
+        "run__flow__hostname",
+        "run__synth__yosys_version",
+        "synth__inst__num__total",
+        "synth__inst__stdcell__area__total",
+        "run__synth__yosys_runtime__total",
+        "run__synth__yosys_mem",
+        "run__synth__yosys_warnings",
+        "run__synth__runtime__total",
+        "run__synth__cpu__total",
+        "run__synth__mem__peak",
+        "floorplan__slack__average__totneg",
+        "floorplan__slack__average__worst",
+        "floorplan__std__area__total",
+        "floorplan__util",
+        "run__floorplan__warnings",
+        "run__floorplan__runtime__total",
+        "run__floorplan__cpu__total",
+        "run__floorplan__mem__peak",
+        "floorplan__io__count__total",
+        "floorplan__io__time__total",
+        "floorplan__io__cpu__total",
+        "floorplan__io__mem__peak",
+        "floorplan__tdms__time__total",
+        "floorplan__tdms__cpu__total",
+        "floorplan__tdms__mem__total",
+        "macroplace__inst__macro__count__total",
+        "macroplace__solutions",
+        "run__macroplace__runtime__total",
+        "run__macroplace__cpu__total",
+        "run__macroplace__mem__peak",
+        "run__tapcell__runtime__total",
+        "run__tapcell__cpu__total",
+        "run__tapcell__mem__peak",
+        "run__pdn__runtime__total",
+        "run__pdn__cpu__total",
+        "run__pdn__mem__peak",
+        "globalplace__wirelength__est",
+        "globalplace__slack__average__worst",
+        "globalplace__slack__average__totneg",
+        "globalplace__util",
+        "run__globalplace__runtime__total",
+        "run__globalplace__cpu__total",
+        "run__globalplace__mem__peak",
+        "resizer__pre__slack__average__totneg",
+        "resizer__pre__slack__average_worst",
+        "resizer__pre__core__area__area",
+        "resizer__pre__util",
+        "resizer__ibuf_count",
+        "resizer__obuf_count",
+        "resizer__resize_count",
+        "resizer__hbuf_count",
+        "resizer__maxcap_viols",
+        "resizer__maxslew_viols",
+        "resizer__maxfanout_viols",
+        "resizer__maxfanout_bufs",
+        "resizer__post__slack__average__totneg",
+        "resizer__post__slack__average__worst",
+        "resizer__post__core__area__total",
+        "resizer__post__util",
+        "run__resizer__runtime__total",
+        "run__resizer__cpu__total",
+        "run__resizer__mem__peak",
+        "detailedplace__inst__core__area__total",
+        "detailedplace__inst__num__total",
+        "detailedplace__util",
+        "detailedplace__total_displacement",
+        "detailedplace__average_displacement",
+        "detailedplace__max_displacement",
+        "detailedplace__wirelength__est__original",
+        "detailedplace__wirelength__est__legalized",
+        "detailedplace__wirelength__est__delta",
+        "run__detailedplace__runtime__total",
+        "run__detailedplace__cpu__total",
+        "run__detailedplace__mem__peak",
+        "cts__clock_roots__total",
+        "cts__buffers_inserted__total",
+        "cts__clock_subnets__total",
+        "cts__sinks__total",
+        "run__cts__runtime__total",
+        "run__cts__cpu__total",
+        "run__cts__mem__peak",
+        "run__globalroute__runtime__total",
+        "run__globalroute__cpu__total",
+        "run__globalroute__mem__peak",
+        "detailedroute__layers__num__total",
+        "detailedroute__inst__macro__num__total",
+        "detailedroute__num_vias",
+        "detailedroute__trackPts",
+        "detailedroute__defvias__num__total",
+        "detailedroute__components__num__total",
+        "detailedroute__terminals__num__total",
+        "detailedroute__nets__num__total",
+        "detailedroute__unique_instances__num__total",
+        "detailedroute__inst__num__total",
+        "detailedroute__runtime",
+        "detailedroute__wirelength__est",
+        "detailedroute__via__num__total",
+        "detailedroute__peak_mem",
+        "detailedroute__warnings",
+        "detailedroute__errors",
+        "detailedroute__drc__num__total",
+        "run__detailedroute__time__total",
+        "run__detailedroute__cpu__total",
+        "run__detailedroute__mem__peak",
+        "finish__power__internal__total",
+        "finish__power__switch__total",
+        "finish__power__leak__total",
+        "finish__power__total",
+        "finish__area",
+        "finish__util",
+        "report_time",
+        "report_cpu",
+        "report_mem",
+        "merge_time",
+        "merge_cpu",
+        "merge_mem",
+        "total_time"
+    ],
+    "properties": {
+        "run__flow__generate_date": {
+            "$id": "#/properties/run__flow__generate_date",
+            "type": "string",
+            "format": "date-time",
+            "description": "Generation date and time of this entry.",
+            "improvement": 0,
+            "examples": [
+                "2020-03-05 20:35"
+            ]
+        },
+        "run__flow__openroad_version": {
+            "$id": "#/properties/run__flow__openroad_version",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "1.1.0"
+            ]
+        },
+        "run__flow__openroad_commit": {
+            "$id": "#/properties/run__flow__openroad_commit",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "8c0d2db176768e500a974b8794f65753faa9ef23"
+            ]
+        },
+        "run__flow__uuid": {
+            "$id": "#/properties/run__flow__uuid",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "25140bf7-d578-4baa-86cc-5fbd45292207"
+            ]
+        },
+        "run__flow__design": {
+            "$id": "#/properties/run__flow__design",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "gcd"
+            ]
+        },
+        "run__flow__platform": {
+            "$id": "#/properties/run__flow__platform",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "nangate45"
+            ]
+        },
+        "comment": {
+            "$id": "#/properties/comment",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                ""
+            ]
+        },
+        "run__flow__hostname": {
+            "$id": "#/properties/run__flow__hostname",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "vlsipool-j19.eecs.umich.edu"
+            ]
+        },
+        "run__synth__yosys_version": {
+            "$id": "#/properties/run__synth__yosys_version",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0.8+498 (git sha1 1280d79b, gcc 8.3.1 -fPIC -Os)"
+            ]
+        },
+        "synth__inst__num__total": {
+            "$id": "#/properties/synth__inst__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                457
+            ]
+        },
+        "synth__inst__stdcell__area__total": {
+            "$id": "#/properties/synth__inst__stdcell__area__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "697.718000"
+            ]
+        },
+        "run__synth__yosys_runtime__total": {
+            "$id": "#/properties/run__synth__yosys_runtime__total",
+            "type": "string",
+            "description": "Yosys self-reported user cpu time",
+            "improvement": 0,
+            "examples": [
+                "0.91s"
+            ]
+        },
+        "run__synth__yosys_mem": {
+            "$id": "#/properties/run__synth__yosys_mem",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "153.69 MB"
+            ]
+        },
+        "run__synth__yosys_warnings": {
+            "$id": "#/properties/run__synth__yosys_warnings",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                72
+            ]
+        },
+        "run__synth__runtime__total": {
+            "$id": "#/properties/run__synth__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:01.54"
+            ]
+        },
+        "run__synth__cpu__total": {
+            "$id": "#/properties/run__synth__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "81%"
+            ]
+        },
+        "run__synth__mem__peak": {
+            "$id": "#/properties/run__synth__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                29516
+            ]
+        },
+        "floorplan__slack__average__totneg": {
+            "$id": "#/properties/floorplan__slack__average__totneg",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 1,
+            "examples": [
+                0.00
+            ]
+        },
+        "floorplan__slack__average__worst": {
+            "$id": "#/properties/floorplan__slack__average__worst",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 1,
+            "examples": [
+                0.00
+            ]
+        },
+        "floorplan__std__area__total": {
+            "$id": "#/properties/floorplan__std__area__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Total standard cell area during floorplanning (um^2)",
+            "improvement": -1,
+            "examples": [
+                2791
+            ]
+        },
+        "floorplan__util": {
+            "$id": "#/properties/floorplan__util",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "11%"
+            ]
+        },
+        "run__floorplan__warnings": {
+            "$id": "#/properties/run__floorplan__warnings",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                0
+            ]
+        },
+        "run__floorplan__runtime__total": {
+            "$id": "#/properties/run__floorplan__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.82"
+            ]
+        },
+        "run__floorplan__cpu__total": {
+            "$id": "#/properties/run__floorplan__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "66%"
+            ]
+        },
+        "run__floorplan__mem__peak": {
+            "$id": "#/properties/run__floorplan__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                50436
+            ]
+        },
+        "floorplan__io__count__total": {
+            "$id": "#/properties/floorplan__io__count__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Number of input/output ports",
+            "improvement": 0,
+            "examples": [
+                54
+            ]
+        },
+        "floorplan__io__time__total": {
+            "$id": "#/properties/floorplan__io__time__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.53"
+            ]
+        },
+        "floorplan__io__cpu__total": {
+            "$id": "#/properties/floorplan__io__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "floorplan__io__mem__peak": {
+            "$id": "#/properties/floorplan__io__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                49144
+            ]
+        },
+        "floorplan__tdms__time__total": {
+            "$id": "#/properties/floorplan__tdms__time__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.51"
+            ]
+        },
+        "floorplan__tdms__cpu__total": {
+            "$id": "#/properties/floorplan__tdms__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "floorplan__tdms__mem__total": {
+            "$id": "#/properties/floorplan__tdms__mem__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                49268
+            ]
+        },
+        "macroplace__inst__macro__count__total": {
+            "$id": "#/properties/macroplace__inst__macro__count__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Total count of block macros in the design",
+            "improvement": 0,
+            "examples": [
+                0
+            ]
+        },
+        "macroplace__solutions": {
+            "$id": "#/properties/macroplace__solutions",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                0
+            ]
+        },
+        "run__macroplace__runtime__total": {
+            "$id": "#/properties/run__macroplace__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.50"
+            ]
+        },
+        "run__macroplace__cpu__total": {
+            "$id": "#/properties/run__macroplace__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "run__macroplace__mem__peak": {
+            "$id": "#/properties/run__macroplace__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                49268
+            ]
+        },
+        "run__tapcell__runtime__total": {
+            "$id": "#/properties/run__tapcell__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.51"
+            ]
+        },
+        "run__tapcell__cpu__total": {
+            "$id": "#/properties/run__tapcell__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "run__tapcell__mem__peak": {
+            "$id": "#/properties/run__tapcell__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                50100
+            ]
+        },
+        "run__pdn__runtime__total": {
+            "$id": "#/properties/run__pdn__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.59"
+            ]
+        },
+        "run__pdn__cpu__total": {
+            "$id": "#/properties/run__pdn__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "run__pdn__mem__peak": {
+            "$id": "#/properties/run__pdn__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                53860
+            ]
+        },
+        "globalplace__wirelength__est": {
+            "$id": "#/properties/globalplace__wirelength__est",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "N/A"
+            ]
+        },
+        "globalplace__slack__average__worst": {
+            "$id": "#/properties/globalplace__slack__average__worst",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 1,
+            "examples": [
+                "9.35e+00"
+            ]
+        },
+        "globalplace__slack__average__totneg": {
+            "$id": "#/properties/globalplace__slack__average__totneg",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 1,
+            "examples": [
+                "0.00e+00"
+            ]
+        },
+        "globalplace__util": {
+            "$id": "#/properties/globalplace__util",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "10.956558"
+            ]
+        },
+        "run__globalplace__runtime__total": {
+            "$id": "#/properties/run__globalplace__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:05.14"
+            ]
+        },
+        "run__globalplace__cpu__total": {
+            "$id": "#/properties/run__globalplace__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "99%"
+            ]
+        },
+        "run__globalplace__mem__peak": {
+            "$id": "#/properties/run__globalplace__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                77236
+            ]
+        },
+        "resizer__pre__slack__average__totneg": {
+            "$id": "#/properties/resizer__pre__slack__average__totneg",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Total negative slack before running resizer (library time units)",
+            "improvement": 1,
+            "examples": [
+                0.0
+            ]
+        },
+        "resizer__pre__slack__average_worst": {
+            "$id": "#/properties/resizer__pre__slack__average_worst",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Worst negative slack before running resizer (library time units)",
+            "improvement": 1,
+            "examples": [
+                0.0
+            ]
+        },
+        "resizer__pre__core__area__area": {
+            "$id": "#/properties/resizer__pre__core__area__area",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "2912 u^2"
+            ]
+        },
+        "resizer__pre__util": {
+            "$id": "#/properties/resizer__pre__util",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "11%"
+            ]
+        },
+        "resizer__ibuf_count": {
+            "$id": "#/properties/resizer__ibuf_count",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Number of buffers inserted by resizer on input ports",
+            "improvement": 0,
+            "examples": [
+                35
+            ]
+        },
+        "resizer__obuf_count": {
+            "$id": "#/properties/resizer__obuf_count",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Number of buffers inserted by resizer on output ports",
+            "improvement": 0,
+            "examples": [
+                18
+            ]
+        },
+        "resizer__resize_count": {
+            "$id": "#/properties/resizer__resize_count",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Number of instances resized by resizer",
+            "improvement": 0,
+            "examples": [
+                212
+            ]
+        },
+        "resizer__hbuf_count": {
+            "$id": "#/properties/resizer__hbuf_count",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Number of hold buffers inserted byu resizer",
+            "improvement": 0,
+            "examples": [
+                0
+            ]
+        },
+        "resizer__maxcap_viols": {
+            "$id": "#/properties/resizer__maxcap_viols",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                0
+            ]
+        },
+        "resizer__maxslew_viols": {
+            "$id": "#/properties/resizer__maxslew_viols",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                0
+            ]
+        },
+        "resizer__maxfanout_viols": {
+            "$id": "#/properties/resizer__maxfanout_viols",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                0
+            ]
+        },
+        "resizer__maxfanout_bufs": {
+            "$id": "#/properties/resizer__maxfanout_bufs",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                0
+            ]
+        },
+        "resizer__post__slack__average__totneg": {
+            "$id": "#/properties/resizer__post__slack__average__totneg",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 1,
+            "examples": [
+                0.0
+            ]
+        },
+        "resizer__post__slack__average__worst": {
+            "$id": "#/properties/resizer__post__slack__average__worst",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 1,
+            "examples": [
+                "0.00"
+            ]
+        },
+        "resizer__post__core__area__total": {
+            "$id": "#/properties/resizer__post__core__area__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "2952 u^2"
+            ]
+        },
+        "resizer__post__util": {
+            "$id": "#/properties/resizer__post__util",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "12%"
+            ]
+        },
+        "run__resizer__runtime__total": {
+            "$id": "#/properties/run__resizer__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:05.05"
+            ]
+        },
+        "run__resizer__cpu__total": {
+            "$id": "#/properties/run__resizer__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "99%"
+            ]
+        },
+        "run__resizer__mem__peak": {
+            "$id": "#/properties/run__resizer__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                78336
+            ]
+        },
+        "detailedplace__inst__core__area__total": {
+            "$id": "#/properties/detailedplace__inst__core__area__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Design core area (um^2)",
+            "improvement": 0,
+            "examples": [
+                6398.4
+            ]
+        },
+        "detailedplace__inst__num__total": {
+            "$id": "#/properties/detailedplace__inst__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Standard cell instance count during detail placement",
+            "improvement": -1,
+            "examples": [
+                624
+            ]
+        },
+        "detailedplace__util": {
+            "$id": "#/properties/detailedplace__util",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Utilization % during detail placement. Measured as (standard cell area)/(core area)",
+            "improvement": 0,
+            "examples": [
+                11
+            ]
+        },
+        "detailedplace__total_displacement": {
+            "$id": "#/properties/detailedplace__total_displacement",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Total instance displacement after detail placement (um)",
+            "improvement": 0,
+            "examples": [
+                522.8
+            ]
+        },
+        "detailedplace__average_displacement": {
+            "$id": "#/properties/detailedplace__average_displacement",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Average instance displacement after detail placement (um)",
+            "improvement": 0,
+            "examples": [
+                0.9
+            ]
+        },
+        "detailedplace__max_displacement": {
+            "$id": "#/properties/detailedplace__max_displacement",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Maximum instance displacement after detail placement (um)",
+            "improvement": 0,
+            "examples": [
+                6.2
+            ]
+        },
+        "detailedplace__wirelength__est__original": {
+            "$id": "#/properties/detailedplace__wirelength__est__original",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                6657.7
+            ]
+        },
+        "detailedplace__wirelength__est__legalized": {
+            "$id": "#/properties/detailedplace__wirelength__est__legalized",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                6858.0
+            ]
+        },
+        "detailedplace__wirelength__est__delta": {
+            "$id": "#/properties/detailedplace__wirelength__est__delta",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                3
+            ]
+        },
+        "run__detailedplace__runtime__total": {
+            "$id": "#/properties/run__detailedplace__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.53"
+            ]
+        },
+        "run__detailedplace__cpu__total": {
+            "$id": "#/properties/run__detailedplace__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "95%"
+            ]
+        },
+        "run__detailedplace__mem__peak": {
+            "$id": "#/properties/run__detailedplace__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                51952
+            ]
+        },
+        "cts__clock_roots__total": {
+            "$id": "#/properties/cts__clock_roots__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                10
+            ]
+        },
+        "cts__buffers_inserted__total": {
+            "$id": "#/properties/cts__buffers_inserted__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                200
+            ]
+        },
+        "cts__clock_subnets__total": {
+            "$id": "#/properties/cts__clock_subnets__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                100
+            ]
+        },
+        "cts__sinks__total": {
+            "$id": "#/properties/cts__sinks__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                100
+            ]
+        },
+        "run__cts__runtime__total": {
+            "$id": "#/properties/run__cts__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.60"
+            ]
+        },
+        "run__cts__cpu__total": {
+            "$id": "#/properties/run__cts__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "95%"
+            ]
+        },
+        "run__cts__mem__peak": {
+            "$id": "#/properties/run__cts__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                55824
+            ]
+        },
+        "run__globalroute__runtime__total": {
+            "$id": "#/properties/run__globalroute__runtime__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:04.85"
+            ]
+        },
+        "run__globalroute__cpu__total": {
+            "$id": "#/properties/run__globalroute__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "99%"
+            ]
+        },
+        "run__globalroute__mem__peak": {
+            "$id": "#/properties/run__globalroute__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                81784
+            ]
+        },
+        "detailedroute__layers__num__total": {
+            "$id": "#/properties/detailedroute__layers__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                19
+            ]
+        },
+        "detailedroute__inst__macro__num__total": {
+            "$id": "#/properties/detailedroute__inst__macro__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                134
+            ]
+        },
+        "detailedroute__num_vias": {
+            "$id": "#/properties/detailedroute__num_vias",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                27
+            ]
+        },
+        "detailedroute__trackPts": {
+            "$id": "#/properties/detailedroute__trackPts",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                20
+            ]
+        },
+        "detailedroute__defvias__num__total": {
+            "$id": "#/properties/detailedroute__defvias__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                6
+            ]
+        },
+        "detailedroute__components__num__total": {
+            "$id": "#/properties/detailedroute__components__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                631
+            ]
+        },
+        "detailedroute__terminals__num__total": {
+            "$id": "#/properties/detailedroute__terminals__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                54
+            ]
+        },
+        "detailedroute__nets__num__total": {
+            "$id": "#/properties/detailedroute__nets__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                588
+            ]
+        },
+        "detailedroute__unique_instances__num__total": {
+            "$id": "#/properties/detailedroute__unique_instances__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                66
+            ]
+        },
+        "detailedroute__inst__num__total": {
+            "$id": "#/properties/detailedroute__inst__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                631
+            ]
+        },
+        "detailedroute__runtime": {
+            "$id": "#/properties/detailedroute__runtime",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "TritonRoute self-measured runtime (s)",
+            "improvement": 0,
+            "examples": [
+                3.81088
+            ]
+        },
+        "detailedroute__wirelength__est": {
+            "$id": "#/properties/detailedroute__wirelength__est",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Total routed wirelength (um)",
+            "improvement": -1,
+            "examples": [
+                7269
+            ]
+        },
+        "detailedroute__via__num__total": {
+            "$id": "#/properties/detailedroute__via__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                2878
+            ]
+        },
+        "detailedroute__peak_mem": {
+            "$id": "#/properties/detailedroute__peak_mem",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "19.33"
+            ]
+        },
+        "detailedroute__warnings": {
+            "$id": "#/properties/detailedroute__warnings",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                0
+            ]
+        },
+        "detailedroute__errors": {
+            "$id": "#/properties/detailedroute__errors",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                0
+            ]
+        },
+        "detailedroute__drc__num__total": {
+            "$id": "#/properties/detailedroute__drc__num__total",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "improvement": -1,
+            "description": "An explanation about the purpose of this instance.",
+            "examples": [
+                1
+            ]
+        },
+        "run__detailedroute__time__total": {
+            "$id": "#/properties/run__detailedroute__time__total",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:03.90"
+            ]
+        },
+        "run__detailedroute__cpu__total": {
+            "$id": "#/properties/run__detailedroute__cpu__total",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "run__detailedroute__mem__peak": {
+            "$id": "#/properties/run__detailedroute__mem__peak",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                19796
+            ]
+        },
+        "finish__power__internal__total": {
+            "$id": "#/properties/finish__power__internal__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "1.35e-05"
+            ]
+        },
+        "finish__power__switch__total": {
+            "$id": "#/properties/finish__power__switch__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "7.49e-06"
+            ]
+        },
+        "finish__power__leak__total": {
+            "$id": "#/properties/finish__power__leak__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "1.50e-05"
+            ]
+        },
+        "finish__power__total": {
+            "$id": "#/properties/finish__power__total",
+            "type": ["number", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "3.61e-05"
+            ]
+        },
+        "finish_area": {
+            "$id": "#/properties/finish_area",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": -1,
+            "examples": [
+                "2978 u^2"
+            ]
+        },
+        "finish_util": {
+            "$id": "#/properties/finish_util",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "12%"
+            ]
+        },
+        "report_time": {
+            "$id": "#/properties/report_time",
+            "type": "string",
+            "format": "duration",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "0:00.58"
+            ]
+        },
+        "report_cpu": {
+            "$id": "#/properties/report_cpu",
+            "type": "string",
+            "description": "An explanation about the purpose of this instance.",
+            "improvement": 0,
+            "examples": [
+                "97%"
+            ]
+        },
+        "report_mem": {
+            "$id": "#/properties/report_mem",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Memory usage (KB) during final reporting, as measured by unix time utility",
+            "improvement": 0,
+            "examples": [
+                54396
+            ]
+        },
+        "merge_time": {
+            "$id": "#/properties/merge_time",
+            "type": "string",
+            "format": "duration",
+            "description": "Wall time for GDS merge, as measured by unix time utility",
+            "improvement": 0,
+            "examples": [
+                "0:01.32"
+            ]
+        },
+        "merge_cpu": {
+            "$id": "#/properties/merge_cpu",
+            "type": "string",
+            "description": "Average CPU Utilization during GDS merge, as measured by unix time utility",
+            "improvement": 0,
+            "examples": [
+                "86%"
+            ]
+        },
+        "merge_mem": {
+            "$id": "#/properties/merge_mem",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "Memory usage (KB) during merge, as measured by unix time utility",
+            "improvement": 0,
+            "examples": [
+                229228
+            ]
+        },
+        "drc_klayout_viols": {
+            "$id": "#/properties/klayout_viols",
+            "type": ["integer", "string"],
+            "pattern": "^N/A$|^ERR$",
+            "description": "DRC violations reported by KLayout ruledeck",
+            "improvement": -1,
+            "examples": [
+                15
+            ]
+        },
+        "total_time": {
+            "$id": "#/properties/total_time",
+            "type": "string",
+            "format": "duration",
+            "description": "Total wall execution time",
+            "improvement": 0,
+            "examples": [
+                "0:00:19"
+            ]
+        }
+    }
+}
