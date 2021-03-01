@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Nangate45</h1>
+    <h1>Nangate45 (Archive)</h1>
     <br />
     <vs-tabs :color="colorx">
       <vs-tab label="aes">          <Metrics designName="aes"         libraryName="nangate45" :metrics=metrics></Metrics> </vs-tab>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Sky130hs</h1>
+    <h1>Sky130hs (Archive)</h1>
     <br />
     <vs-tabs :color="colorx">
       <vs-tab label="aes">          <Metrics designName="aes"         libraryName="sky130hs" :metrics=metrics></Metrics> </vs-tab>
