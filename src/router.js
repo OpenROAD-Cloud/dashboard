@@ -37,17 +37,17 @@ const router = new Router({
           component: () => import('./views/Home.vue')
         },
         {
-          path: 'archive/nangate45-openroad',
+          path: '/archive/nangate45-openroad',
           name: 'nangate45-openroad-archive',
           component: () => import('./views/pdks/nangate45.vue')
         },
         {
-          path: 'archive/sky130hd-openroad',
+          path: '/archive/sky130hd-openroad',
           name: 'sky130hd-openroad-archive',
           component: () => import('./views/pdks/sky130hd.vue')
         },
         {
-          path: 'archive/sky130hs-openroad',
+          path: '/archive/sky130hs-openroad',
           name: 'sky130hs-openroad-archive',
           component: () => import('./views/pdks/sky130hs.vue')
         },
